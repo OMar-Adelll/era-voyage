@@ -1,12 +1,14 @@
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url('BackGround1.png');  
+    background-image: url('../Images/BackGround1\(atlantis\).png');  
     background-size: 100% auto; 
     background-position: top center;
     background-repeat: no-repeat; 
     min-height: 271vh; 
     position: relative;
+    
   
 }
 
@@ -32,7 +34,7 @@ background: linear-gradient(
       0px 0px 10px rgb(240, 219, 29),
       0px 0px 20px rgb(255, 255, 255),
       0px 0px 40px rgb(255, 255, 255);   
-    margin-top: 380px;
+    margin-top: 300px;
     font-family: 'cinzel' , serif;
 }
 
@@ -56,7 +58,7 @@ background: linear-gradient(
     transform: perspective(800px) rotateY(53deg) 
     translateX(-50px);
     right: 900px;
-    top: 520px;
+    top: 900px;
     width: 185px;
     height: 250px;
     
@@ -74,7 +76,7 @@ background: linear-gradient(
     width: 74px;
     height: 200px;
     right: 482px;
-    top: 540px;
+    top: 925px;
   
 }
 
@@ -89,7 +91,7 @@ background: linear-gradient(
     transform: perspective(800px) rotateY(45deg) 
     translateX(-50px);
     right: 750px;
-    top: 545px;
+    top: 925px;
     width: 90px;
     height: 200px;
 }
@@ -106,7 +108,7 @@ background: linear-gradient(
     transform: perspective(800px) rotateY(-54deg)
     translateX(50px);
     right: 220px;
-    top: 520px;
+    top: 900px;
     width: 185px;
     height: 250px;
     
@@ -120,7 +122,7 @@ background: linear-gradient(
 
 .brief {
     right: 350px;
-    top: 200px;
+    top: 580px;
     width: 600px;
     height: 190px;
     
@@ -163,7 +165,7 @@ background: linear-gradient(
 .avatar {
     width: 300px;
     animation: float 4s ease-in-out infinite;
-    margin-top: 950px;
+    margin-top: 895px;
    margin-right: 350px
 }
 
@@ -184,8 +186,8 @@ background: linear-gradient(
 
 .bubble {
     position: absolute;
-    bottom: 30%;
-    right: 600px;
+    bottom: 31%;
+    right: 580px;
     background: rgba(238, 232, 232, 0.986);
     color: rgb(135, 183, 238);
     padding: 10px 15px;
@@ -220,20 +222,29 @@ background: linear-gradient(
 
 
 .back-btn {
-    position: absolute ;
-    top: -350px;
-    left: 30px;
-    padding: 10px 18px;
-    background: white;
-    color: black;
-    border-radius: 12px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #0A2540, #D4AF37);
+  color: white;
+  border: 2px solid #E8B923;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  transition: all 0.3s ease;
+  margin-right: 1200px;
+  margin-top: 20px;
 }
 
 .back-btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 180, 166, 0.8);
+  background: linear-gradient(135deg, #00B4A6, #D4AF37);
+}
+
+.back-btn::before {
+  content: "←";
+  font-size: 22px;
 }
