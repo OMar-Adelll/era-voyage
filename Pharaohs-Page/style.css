@@ -29,7 +29,7 @@ body {
 /* Every section alone */
  /* Section-1 */
 .section-1 { background-position: center 0%;
-    background-image: url('media/cover2.png');
+    background-image: url('media/b1.png');
     background-size: cover;
 }     
 .section-2 { background-position: center 33.33%; }  /* Section-2 */
@@ -61,18 +61,19 @@ p {
 /* Section-1 */
 .section-1 h1{ 
     position: absolute;
+    color: rgb(231, 198, 107)(212, 175, 55, 0.4);
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     font-size: clamp(2.2rem, 5vw, 4rem);
     letter-spacing: 3px;
     padding: 20px 40px;
-    background: rgba(0, 0, 0, 0.7);;
-    border: 2px solid #d4af37;
-    border-radius: 15px;
+    /* background: rgba(0, 0, 0, 0.7);; */
+    /* border: 2px solid #d4af37; */
+    /* border-radius: 15px; */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.932);
     z-index: 2;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4)
+    /* box-shadow: 0 0 30px rgba(212, 175, 55, 0.4) */
 }
 
 /* Section-2 */
