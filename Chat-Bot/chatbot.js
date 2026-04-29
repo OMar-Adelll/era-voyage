@@ -1,40 +1,94 @@
 const API_KEY = "AIzaSyCGyPQZWD0rVz0E3Bl5LluqDKWgKAl9PQw";
 
 
-const chatBot = document.getElementById("chatBot");
+const chatBotInput = document.getElementById("chatbot-input");
+const chatBotMessages = document.getElementById("chatbot-messages");
+
 let conversation = [];
 
-function addMessage(text, type) {
-    const msg = document.createElement("div");
-    msg.classList.add("message", type);
-    msg.innerText = text;
-    chatBot.appendChild(msg);
-    chatBot.scrollTop = chatBot.scrollHeight;
+
+// Actions
+document.addEventListener("DOMContentLoaded", function () {
+
+    const chatbotContainer = document.getElementById("chatbot-container");
+    const closeBtn = document.getElementById("close-btn");
+    const sendBtn = document.getElementById("send-btn");
+    const chatBotIcon = document.getElementById("chatbot-icon");
+
+    chatBotIcon.addEventListener("click", function () {
+        chatbotContainer.classList.remove("hidden");
+        chatBotIcon.style.display = "none";
+    });
+
+    closeBtn.addEventListener("click", function () {
+        chatbotContainer.classList.add("hidden");
+        chatBotIcon.style.display = "flex";
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+
+    chatBotInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") sendMessage();
+    });
+
+});
+
+
+
+function createTypingBubble() {
+    const typing = document.createElement("div");
+    typing.classList.add("message", "bot", "typing");
+
+    typing.innerHTML = `
+    <span></span>
+    <span></span>
+    <span></span>
+    `;
+
+    chatBotMessages.appendChild(typing);
+    chatBotMessages.scrollTop = chatBotMessages.scrollHeight;
+    return typing;
+}
+
+
+let typingElement = null;
+function showTyping() {
+    typingElement = createTypingBubble();
 }
 
 function removeTyping() {
-    document.querySelectorAll(".ai").forEach(el => {
-        if (el.innerText === "Typing...") el.remove();
-    });
+    if (typingElement) {
+        typingElement.remove();
+        typingElement = null;
+    }
+}
+
+
+// Chat-bot Details
+function addMessage(text, type) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message", type);
+    messageElement.innerText = text;
+    chatBotMessages.appendChild(messageElement);
+    chatBotMessages.scrollTop = chatBotMessages.scrollHeight;
 }
 
 
 async function sendMessage() {
-    const input = document.getElementById("user-input");
-    const text = input.value.trim();
+    const text = chatBotInput.value.trim();
     if (!text) return;
 
     addMessage(text, "user");
-    input.value = "";
+    chatBotInput.value = "";
 
-    addMessage("Typing...", "ai");
 
     const reply = await AskMora(text);
 
-    removeTyping();
-    addMessage(reply, "ai");
+    addMessage(reply, "bot");
 }
 
+
+// Chat-bot asynchronous
 async function AskMora(prompt) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${API_KEY}`;
 
@@ -60,7 +114,7 @@ async function AskMora(prompt) {
         console.log(data);
 
         if (!res.ok) {
-            return data?.error?.message || "APIs Error";
+            return data?.error?.message || "API Error";
         }
 
         const reply =
@@ -76,6 +130,6 @@ async function AskMora(prompt) {
 
     } catch (error) {
         console.error(error);
-        return "Connection Faild!";
+        return "Connection Failed!";
     }
 }
