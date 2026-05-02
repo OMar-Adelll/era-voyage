@@ -171,9 +171,6 @@ body {
   opacity: 0.4;
 }
 
-#send-btn:disabled {
-  opacity: 0.5;
-}
 
 .typing {
   display: flex;

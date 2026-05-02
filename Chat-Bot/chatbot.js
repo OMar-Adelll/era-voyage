@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+// typing bubbles
 function createTypingBubble() {
     const typing = document.createElement("div");
     typing.classList.add("message", "bot", "typing");
@@ -76,6 +76,11 @@ function removeTyping() {
     }
 }
 
+// message appears in the chat once it's open
+window.onload = function ()
+{
+  addMessage("Hello, Do you have anything to ask about ?", "bot");
+};
 
 // Chat-bot Details
 function addMessage(text, type) {
