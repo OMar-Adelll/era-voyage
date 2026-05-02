@@ -14,21 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById("close-btn");
     const sendBtn = document.getElementById("send-btn");
     const chatBotIcon = document.getElementById("chatbot-icon");
+    sendBtn.disabled = true;
 
     chatBotIcon.addEventListener("click", function () {
-        chatbotContainer.classList.remove("hidden");
-        chatBotIcon.style.display = "none";
+        chatbotContainer.classList.add("active");
+        chatBotIcon.classList.add("hide");
     });
 
     closeBtn.addEventListener("click", function () {
-        chatbotContainer.classList.add("hidden");
-        chatBotIcon.style.display = "flex";
+        chatbotContainer.classList.remove("active");
+        chatBotIcon.classList.remove("hide");
     });
 
     sendBtn.addEventListener("click", sendMessage);
 
     chatBotInput.addEventListener("keypress", function (e) {
         if (e.key === "Enter") sendMessage();
+    });
+
+    chatBotInput.addEventListener("input", function ()
+    {
+        if(chatBotInput.value.trim() === "")
+        {
+            sendBtn.disabled = true;
+        }
+        else
+        {
+            sendBtn.disabled = false;
+        }
     });
 
 });
@@ -80,10 +93,9 @@ async function sendMessage() {
 
     addMessage(text, "user");
     chatBotInput.value = "";
-
-
+    showTyping();
     const reply = await AskMora(text);
-
+    removeTyping();
     addMessage(reply, "bot");
 }
 

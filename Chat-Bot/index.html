@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat Bot</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div id="chatbot-icon">🗨</div>
 
-  <div id="chatbot-container" class="hidden">
+<body>
+  <div id="chatbot-icon">
+    <img src="media/atlantis1.png" alt="bot">
+  </div>
+
+  <div id="chatbot-container">
     <div id="chatbot-header">
-      <span>ChatBot</span>
-      <button id="close-btn">&times;</button>    
+      <span>Plato</span>
+      <button id="close-btn">
+        <img src="media/close.png" alt="send">
+      </button>
     </div>
 
-    <div id="chatbot-body">
+    <div id="chatbot-body" id="chat-bg">
       <div id="chatbot-messages"></div>
     </div>
 
     <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" placeholder="What's on your mind ?">
-      <button id="send-btn">Send</button>
+      <input type="text" id="chatbot-input" placeholder="Chat With Plato">
+      <button id="send-btn">
+        <img src="media/send.png" alt="send">
+      </button>
     </div>
 
   </div>
   <script src="chatbot.js"></script>
 </body>
+
 </html>
