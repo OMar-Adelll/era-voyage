@@ -42,16 +42,16 @@
                 The Lost Civilization
             </h2>
             <span class="ai-reader" onclick="toggleAudio(this)">
-                    🕪
+                🕪
             </span>
             <div class="audio-box">
                 <audio id="brief-audio" src="Media/AIReader.mp3"></audio>
             </div>
-              <p>Atlantis is a legendary lost civilization first
-                 described by Plato. It was said to be a highly advanced 
-                 and wealthy island nation with powerful technology and architecture. According to the story,
-                  it disappeared suddenly after a great natural disaster and was swallowed by the ocean.
-                   Its existence remains a mystery to this day, inspiring myths and theories around the world
+            <p>Atlantis is a legendary lost civilization first
+                described by Plato. It was said to be a highly advanced
+                and wealthy island nation with powerful technology and architecture. According to the story,
+                it disappeared suddenly after a great natural disaster and was swallowed by the ocean.
+                Its existence remains a mystery to this day, inspiring myths and theories around the world
             </p>
 
         </div>
@@ -148,7 +148,7 @@
             </div>
 
             <div class="more-card">
-                <img src="Media/lastSection(home).png"alt="Home" class="card-img-top">
+                <img src="Media/lastSection(home).png" alt="Home" class="card-img-top">
                 <div class="more-card-content">
                     <h3>
                         Home
@@ -185,66 +185,67 @@
 
     </section>
 
-   <div class="last-section-bg">
-    <footer class="footer">
-        <h2 class="footer-title">
-            ATLANTIS
-        </h2>
-        <p>
-            Dive into the mysteries of Atlantis and explore
-            ancient civilizations.
-        </p>
-    </footer>
+    <div class="last-section-bg">
+        <footer class="footer">
+            <h2 class="footer-title">
+                ATLANTIS
+            </h2>
+            <p>
+                Dive into the mysteries of Atlantis and explore
+                ancient civilizations.
+            </p>
+        </footer>
 
-</div>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="popup" id="popup">
+        <div class="popup-content">
 
- <div class="popup" id="popup">
-    <div class="popup-content">
+            <span class="close" onclick="closePopup()">✖</span>
 
-        <span class="close" onclick="closePopup()">✖</span>
-
-        <div class="popup-body">
-            <img id="popup-img" src="" alt="image">
-            <div class="popup-text">
-                <h2 id="popup-title"></h2>
-                <p id="popup-text"></p>
+            <div class="popup-body">
+                <img id="popup-img" src="" alt="image">
+                <div class="popup-text">
+                    <h2 id="popup-title"></h2>
+                    <p id="popup-text"></p>
+                </div>
             </div>
+
+        </div>
+    </div>
+
+
+    <!-- chatbot section here -->
+
+    <div id="chatbot-icon">
+        <img src="../Chat-Bot/media/atlantis1.png" alt="bot">
+    </div>
+
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <span>Plato</span>
+            <button id="close-btn">
+                <img src="../Chat-Bot/media/close.png" alt="send">
+            </button>
+        </div>
+
+        <div id="chatbot-body">
+            <div id="chat-bg"></div>
+            <div id="chatbot-messages"></div>
+        </div>
+
+        <div id="chatbot-input-container">
+            <input id="chatbot-input" placeholder="Chat With Plato" rows="1"></input>
+            <button id="send-btn" disabled>
+                <img src="../Chat-Bot/media/send.png" alt="send">
+            </button>
         </div>
 
     </div>
-</div>
 
 
-<!-- chatbot section here -->
-
-<div id="chatbot-icon">
-    <img src="../Chat-Bot/media/atlantis1.png" alt="bot">
-  </div>
-
-  <div id="chatbot-container">
-    <div id="chatbot-header">
-      <span>Plato</span>
-      <button id="close-btn">
-        <img src="../Chat-Bot/media/close.png" alt="send">
-      </button>
-    </div>
-
-    <div id="chatbot-body">
-      <div id="chat-bg"></div>
-      <div id="chatbot-messages"></div>
-    </div>
-
-    <div id="chatbot-input-container">
-      <input id="chatbot-input" placeholder="Chat With Plato"  rows="1"></input>
-      <button id="send-btn" disabled>
-        <img src="../Chat-Bot/media/send.png" alt="send">
-      </button>
-    </div>
-
-  </div>
-  <script src="../Chat-Bot/chatbot.js"></script>
+    <script src="../Chat-Bot/chatbot.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

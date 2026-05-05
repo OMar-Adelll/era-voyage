@@ -6,6 +6,7 @@
         <title>Ancient Egyptians</title>
         <link rel="icon" href="media/logo.png">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="chatbot_egypt.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
@@ -137,6 +138,39 @@
                 </p>
             </div>
         </div>
+
+
+        <!-- chatbot section here -->
+
+    <div id="chatbot-icon">
+        <img src="../Chat-Bot/media/egypt.png" alt="bot">
+    </div>
+
+    <div id="chatbot-container">
+       <div id="chatbot-header">
+        <span>Plato</span>
+        <button id="close-btn">
+           <img src="../Chat-Bot/media/close.png" alt="send">
+        </button>
+       </div>
+
+       <div id="chatbot-body">
+        <div id="chat-bg"></div>
+        <div id="chatbot-messages"></div>
+       </div>
+
+       <div id="chatbot-input-container">
+        <input id="chatbot-input" placeholder="Chat With Plato"  rows="1"></input>
+        <button id="send-btn" disabled>
+          <img src="../Chat-Bot/media/send.png" alt="send">
+        </button>
+       </div>
+
+    </div>
+
+
+    <script src="../Chat-Bot/chatbot.js"></script>
+
 
         <script src="script.js"></script>
     </body>
