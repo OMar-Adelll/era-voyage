@@ -33,6 +33,7 @@ body {
   width: 90%;
   height: 90%;
   object-fit: contain;
+  filter: brightness(0.78);
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
@@ -65,7 +66,7 @@ body {
 
 
 #chatbot-header {
-  background: linear-gradient(90deg, #3e2e14, #5f4e14);
+  background: linear-gradient(90deg, #875c16, #c2a239);
   color: white;
   padding: 10px 12px;
   font-size: 17px;
@@ -102,8 +103,17 @@ body {
 #chat-bg {
   position: absolute;
   inset: 0;
-  background: url("../Chat-Bot/media/back_egypt2.png") center/cover cover no-repeat;
+  overflow: hidden;
   pointer-events: none;
+}
+
+#chat-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../Chat-Bot/media/back_egypt2.png") center/cover no-repeat;
+  filter: brightness(0.85);
+  transform: scale(1.05);
 }
 
 #chatbot-messages {
@@ -124,13 +134,13 @@ body {
 }
 
 .message.user {
-  background-color: #856d20;
+  background-color: #856e29;
   color: white;
   align-self: flex-end;
 }
 
 .message.bot {
-  background-color: #4e381a;
+  background-color: #544108;
   color: white;
   align-self: flex-start;
 }
@@ -140,7 +150,7 @@ body {
   padding: 8px 10px;
   gap: 8px;
   border-top: 1px solid #6f5023;
-  background: linear-gradient(90deg, #3e2e14, #5f4e14);
+  background: linear-gradient(90deg, #875c16, #c2a239);
   background-color: #1a2f42;
   align-items: center;
   box-sizing: border-box;
@@ -152,7 +162,7 @@ body {
   padding: 10px 15px;
   font-size: 15px;
   border-radius: 20px;
-  background-color: #302504;
+  background-color: #413206;
   border: none;
   color: white;
   resize: none;
@@ -243,7 +253,7 @@ body {
 #chatbot-input:-webkit-autofill:hover, 
 #chatbot-input:-webkit-autofill:focus {
   -webkit-text-fill-color: white !important;
-  -webkit-box-shadow: 0 0 0px 1000px #1a1402 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #413206 inset !important;
   font-family: "Poppins", sans-serif !important;
   transition: background-color 5000s ease-in-out 0s;
 }
