@@ -5,12 +5,13 @@
     --text-color: rgba(255, 245, 220, 0.95);
     --glass-bg: rgba(10, 8, 5, 0.85);
     --border-gold: rgba(212, 175, 55, 0.3);
+
     --font-display: 'Cinzel Decorative', serif;
     --font-title: 'Cinzel', serif;
     --font-body: 'Crimson Text', serif;
 }
 
-/* ===== RESET & BASE ===== */
+/* ===== RESET ===== */
 *,
 *::before,
 *::after {
@@ -19,28 +20,27 @@
     padding: 0;
 }
 
+/* ===== BODY ===== */
 body {
     background-color: var(--deep-bg);
-    background-image: url('media/nativeAmericans.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: top center;
     color: var(--text-color);
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.8;
 }
 
+/* ===== VIGNETTE ===== */
 .vignette-overlay {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+    background: radial-gradient(circle,
+            transparent 20%,
+            rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
     pointer-events: none;
 }
 
-/* ===== SECTIONS LAYOUT ===== */
+/* ===== GENERAL SECTION ===== */
 section {
     position: relative;
     z-index: 2;
@@ -48,17 +48,25 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    justify-content: center;
+    padding: 80px 20px;
 }
 
-/* ===== PART 1: HERO ===== */
+/* ========================================================= */
+/* ===================== HERO SECTION ====================== */
+/* ========================================================= */
+
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 45vh;
-    min-height: 120vh;
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.30),
+            rgba(10, 8, 5, 0.65)),
+        url('media/nativeAmericans.png');
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .hero-content {
@@ -68,14 +76,17 @@ section {
 
 .main-title {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 9vw, 7rem);
+     font-size: clamp(2.2rem, 6vw, 5rem);
     text-transform: uppercase;
     letter-spacing: 12px;
+
     background: linear-gradient(to bottom, #fff, var(--gold-bright), var(--gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
-    margin-top: 20px;
+    margin-top: 25%;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -87,14 +98,21 @@ section {
     text-transform: uppercase;
 }
 
-/* ===== PART 2: COUNCIL ===== */
-.council-section {
-    margin-top: -25vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 20px;
+/* ========================================================= */
+/* ===================== BRIEF SECTION ===================== */
+/* ========================================================= */
+
+.brief-section {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(5, 5, 5, 0.30),
+            rgba(5, 5, 5, 0.65)),
+        url('media/SEC2.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .brief-container {
@@ -106,7 +124,6 @@ section {
     border-radius: 4px;
     backdrop-filter: blur(8px);
     text-align: left;
-    margin: 0 auto 60px auto;
 }
 
 .brief-title {
@@ -114,13 +131,29 @@ section {
     font-family: var(--font-title);
     font-size: 2rem;
     margin-bottom: 15px;
-    display: block;
 }
 
 .brief-text {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.8;
+}
+
+/* ========================================================= */
+/* ===================== CARDS SECTION ===================== */
+/* ========================================================= */
+
+.cards-section {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(8, 8, 8, 0.15),
+            rgba(8, 8, 8, 0.45)),
+        url('media/SEC3.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .cards-grid {
@@ -131,53 +164,64 @@ section {
     max-width: 1200px;
 }
 
-/* ===== CARDS — GLASS PANEL STYLE ===== */
+/* ===== CARDS (NEW INDIGENOUS COLORS) ===== */
+
 .card {
     cursor: pointer;
     padding: 40px 28px 36px;
     min-height: 300px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     position: relative;
     overflow: hidden;
-    background: rgba(20, 28, 38, 0.55) !important;
-    backdrop-filter: blur(14px) !important;
-    -webkit-backdrop-filter: blur(14px) !important;
-    border: 1px solid rgba(180, 210, 255, 0.18) !important;
+
+    background: rgba(92, 52, 35, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(212, 175, 135, 0.35);
     border-radius: 6px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 220, 180, 0.08);
+
     text-align: left;
     transition: 0.4s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    background: rgba(20, 28, 38, 0.72) !important;
-    border-color: rgba(212, 175, 55, 0.45) !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.1);
-}
+    background: rgba(120, 70, 45, 0.65);
+    border-color: rgba(255, 190, 120, 0.6);
 
-.card .card-icon {
-    display: none;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(200, 120, 70, 0.25);
 }
 
 .card .card-title {
-    font-family: 'Cinzel', serif !important;
-    font-size: 1.35rem !important;
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
     font-weight: 600;
-    color: #D4AF37 !important;
+
+    color: #f3d2a2;
     text-transform: uppercase;
     letter-spacing: 2px;
+
     margin-bottom: 18px;
-    line-height: 1.4;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.25);
+
+    text-shadow:
+        0 0 15px rgba(200, 120, 70, 0.35);
 }
 
 .card p {
     font-family: 'Crimson Text', serif;
     font-size: 1.05rem;
-    color: rgba(230, 240, 255, 0.85);
+    color: rgba(255, 235, 210, 0.9);
     line-height: 1.75;
 }
 
@@ -186,107 +230,103 @@ section {
     position: absolute;
     bottom: 18px;
     right: 22px;
+
     font-family: 'Cinzel', serif;
     font-size: 0.6rem;
     letter-spacing: 3px;
-    color: rgba(212, 175, 55, 0.4);
-    transition: color 0.3s, transform 0.3s;
+
+    color: rgba(255, 200, 140, 0.6);
 }
 
 .card:hover::after {
-    color: rgba(212, 175, 55, 0.95);
-    transform: translateX(4px);
+    color: #ffd2a1;
 }
 
-/* ===== PART 3: PORTAL SECTION ===== */
+/* ========================================================= */
+/* ===================== PORTALS SECTION =================== */
+/* ========================================================= */
+
 .guide-section {
-    justify-content: center;
-    align-items: stretch;
-    padding: 80px 0 100px;
-    min-height: 100vh;
+    background-image:
+        linear-gradient(to bottom,
+            rgba(5, 5, 5, 0.15),
+            rgba(0, 0, 0, 0.45)),
+        url('media/SEC4.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .portals-stage {
-    position: relative;
     width: 100%;
-    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 250px;
-    max-width: 100%;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 0 80px;
 }
 
+/* ===== PORTAL CARD (UPDATED) ===== */
+
 .portal-card {
-    background: rgba(15, 22, 35, 0.6);
+    background: rgba(80, 45, 30, 0.6);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(180, 210, 255, 0.15);
-    border-top: 2px solid rgba(212, 175, 55, 0.7);
+
+    border: 1px solid rgba(220, 180, 140, 0.25);
+    border-top: 2px solid rgba(255, 180, 120, 0.7);
+
     border-radius: 6px;
+
     padding: 42px 32px;
     width: 300px;
+
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s;
     text-decoration: none;
+
     display: block;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 10px 45px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 230, 200, 0.05);
 }
 
 .portal-card:hover {
     transform: translateY(-14px) scale(1.02);
-    background: rgba(15, 22, 35, 0.82);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 175, 55, 0.15);
-    border-top-color: #D4AF37;
-}
 
-.portal-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 18px;
-    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
-}
+    background: rgba(110, 60, 40, 0.75);
 
-.portal-label {
-    font-family: 'Cinzel', serif;
-    color: rgba(212, 175, 55, 0.5);
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(200, 120, 70, 0.25);
+
+    border-top-color: #ffb97a;
 }
 
 .portal-title {
-    font-family: 'Cinzel', serif;
-    color: #D4AF37;
-    font-size: 1.25rem;
-    margin-bottom: 14px;
-    letter-spacing: 1px;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
+    color: #f3d2a2;
 }
 
 .portal-desc {
-    font-family: 'Crimson Text', serif;
-    color: rgba(220, 235, 255, 0.75);
-    font-size: 0.98rem;
-    line-height: 1.7;
+    color: rgba(255, 230, 210, 0.8);
 }
 
 .portal-arrow {
-    display: inline-block;
-    margin-top: 20px;
-    color: rgba(212, 175, 55, 0.6);
-    font-size: 1.5rem;
-    transition: transform 0.3s, color 0.3s;
+    color: rgba(255, 180, 120, 0.6);
 }
 
 .portal-card:hover .portal-arrow {
-    color: #D4AF37;
-    transform: translateX(6px);
+    color: #ffd2a1;
 }
 
-/* ===== MODAL ===== */
+/* ===== MODAL (unchanged) ===== */
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -297,7 +337,7 @@ section {
     justify-content: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition: 0.4s ease;
     backdrop-filter: blur(6px);
 }
 
@@ -313,118 +353,57 @@ section {
     padding: 50px 45px;
     max-width: 700px;
     width: 90%;
-    position: relative;
-    transform: translateY(40px) scale(0.97);
-    transition: transform 0.4s ease;
 }
 
-.modal-overlay.active .modal-box {
-    transform: translateY(0) scale(1);
-}
+/* ===== BACK BTN ===== */
 
-.modal-close {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    background: none;
-    border: none;
-    color: #D4AF37;
-    font-size: 1.6rem;
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-    line-height: 1;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.modal-close:hover {
-    opacity: 1;
-}
-
-.modal-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.modal-title {
-    font-family: 'Cinzel', serif;
-    color: #D4AF37;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    padding-bottom: 15px;
-}
-
-.modal-body {
-    font-family: 'Crimson Text', serif;
-    color: rgba(255, 245, 220, 0.9);
-    font-size: 1.15rem;
-    line-height: 1.85;
-}
-
-.modal-body p {
-    margin-bottom: 14px;
-}
-
-.modal-body p:last-child {
-    margin-bottom: 0;
-}
-
-/* ===== BACK BUTTON ===== */
 .back-btn {
     position: absolute;
     top: 30px;
     left: 30px;
-    z-index: 1000;
+
+    z-index: 99999; 
     background: var(--glass-bg);
     border: 1px solid var(--gold);
     color: var(--gold);
+
     padding: 12px 24px;
     cursor: pointer;
+
     font-family: var(--font-title);
     text-transform: uppercase;
+
+    transition: 0.3s;
 }
 
-.back-btn:hover {
-    background: var(--gold);
-    color: #000;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
+/* ===== ANIMATION ===== */
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .main-title {
-        font-size: 3.5rem;
-    }
 
-    .portals-stage {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
+
+/* ================= PORTAL ELEMENTS FIX ================= */
+
+.portal-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 18px;
+
+    filter: drop-shadow(0 0 10px rgba(200, 120, 70, 0.35));
+}
+
+.portal-label {
+    font-family: 'Cinzel', serif;
+
+    color: rgba(255, 210, 160, 0.6);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
 }
