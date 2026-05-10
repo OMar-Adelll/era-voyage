@@ -79,7 +79,7 @@ ERA-VOYAGE/
 │   ├── style.css
 │   └── chatbot_egypt.css
 │
-├── Start-Page/
+├── Main-Start-Page/
 │   ├── media/
 │   ├── index.html
 │   ├── StartPage.css
